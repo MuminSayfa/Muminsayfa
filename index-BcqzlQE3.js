@@ -314,7 +314,7 @@ Error generating stack: `+i.message+`
 Bu uygulama (NUR), kişisel verilerinizi sunucularımızda toplamaz veya saklamaz. Tüm işlemler cihazınızda (istemci tarafı) gerçekleşir.
 
 **2. Konum Verileri:**
-Uygulama, namaz vakitlerini ve kıble yönünü hesaplamak, ayrıca hava durumunu göstermek için anlık konum verinize (Enlem/Boylam) erişim izni ister. Bu veriler yalnızca 3. taraf API servislerine (Aladhan API, OpenMeteo) anlık sorgu göndermek için kullanılır ve veritabanlarımızda asla kaydedilmez.
+Uygulama, namaz vakitlerini hesaplamak, ayrıca hava durumunu göstermek için anlık konum verinize (Enlem/Boylam) erişim izni ister. Bu veriler yalnızca 3. taraf API servislerine (Aladhan API, OpenMeteo) anlık sorgu göndermek için kullanılır ve veritabanlarımızda asla kaydedilmez.
 
 **3. Yerel Depolama (Cookies/Local Storage):**
 Uygulama ayarlarınızı (dil seçimi, tema tercihi, zikirmatik sayacı vb.) hatırlamak için tarayıcınızın yerel depolama alanını kullanır.
