@@ -5,21 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nur - İslami Yaşam Rehberi</title>
     
-    <!-- Primary Meta Tags -->
     <meta name="title" content="Nur - İslami Yaşam Rehberi" />
     <meta name="description" content="Namaz vakitleri, Kuran-ı Kerim, Hadis, İlmihal, Zikirmatik ve İslami Rehber uygulaması. Günlük ibadetleriniz için en kapsamlı asistan." />
     <meta name="keywords" content="namaz vakitleri, kuran, hadis, ilmihal, zikirmatik, dini rehber, kıble, ibadet" />
     <meta name="author" content="MET" />
     <meta name="theme-color" content="#0f0518" />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nur-app.web.app/" />
     <meta property="og:title" content="Nur - İslami Yaşam Rehberi" />
     <meta property="og:description" content="Namaz vakitleri, Kuran, Hadis ve İlmihal hepsi tek bir yerde." />
     <meta property="og:image" content="https://images.unsplash.com/photo-1564121211835-e88c852648ab?q=80&w=1200&auto=format&fit=crop" />
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="Nur - İslami Yaşam Rehberi" />
     <meta property="twitter:description" content="Namaz vakitleri, Kuran, Hadis ve İlmihal hepsi tek bir yerde." />
@@ -135,5 +132,33 @@
 </head>
   <body>
     <div id="root"></div>
+
+    <script>
+      function notifyFlutterAd() {
+        if (window.AdControl) {
+          // Bu mesaj Flutter'a gidince Flutter karar verir:
+          // "Zar atayım mı? Süre doldu mu? Yoksa Tıklama sayısı mı doldu?"
+          window.AdControl.postMessage('gecis_yapildi');
+        }
+      }
+
+      // Sayfanın herhangi bir yerine tıklanınca çalışır
+      document.addEventListener('click', function(e) {
+        
+        // Tıklanan öğe bir BUTON mu yoksa LİNK mi?
+        const targetElement = e.target.closest('button, a');
+
+        if (targetElement) {
+           // Tıklanan şey Menü içinde mi? (nav veya fixed menü)
+           const isInsideNav = targetElement.closest('nav'); 
+           const isInsideMobileMenu = targetElement.closest('.fixed');
+
+           // Eğer menü butonlarından birine tıklandıysa sinyali gönder
+           if (isInsideNav || isInsideMobileMenu) {
+             notifyFlutterAd();
+           }
+        }
+      });
+    </script>
 </body>
 </html>
